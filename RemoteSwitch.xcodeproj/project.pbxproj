@@ -17,6 +17,11 @@
 		57D419ED149432A900B28108 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D419CD149432A900B28108 /* Cocoa.framework */; };
 		57D419F5149432A900B28108 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57D419F3149432A900B28108 /* InfoPlist.strings */; };
 		57D419F8149432A900B28108 /* RemoteSwitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D419F7149432A900B28108 /* RemoteSwitchTests.m */; };
+		57D41A091494408900B28108 /* HIDRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D41A081494408900B28108 /* HIDRemote.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		57D41A0B1494417B00B28108 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D41A0A1494417B00B28108 /* Carbon.framework */; };
+		57D41A0D1494418300B28108 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D41A0C1494418300B28108 /* IOKit.framework */; };
+		57D41A1114945E8000B28108 /* disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D41A0F14945E8000B28108 /* disabled.png */; };
+		57D41A1214945E8000B28108 /* enabled.png in Resources */ = {isa = PBXBuildFile; fileRef = 57D41A1014945E8000B28108 /* enabled.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +40,26 @@
 		57D419D0149432A900B28108 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		57D419D1149432A900B28108 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		57D419D2149432A900B28108 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		57D419D5149432A900B28108 /* RemoteSwitch-Info.plist */ = {isa = PBXFileReference; path = "RemoteSwitch-Info.plist"; sourceTree = "<group>"; };
+		57D419D5149432A900B28108 /* RemoteSwitch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RemoteSwitch-Info.plist"; sourceTree = "<group>"; };
 		57D419D7149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		57D419D9149432A900B28108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		57D419DB149432A900B28108 /* RemoteSwitch-Prefix.pch */ = {isa = PBXFileReference; path = "RemoteSwitch-Prefix.pch"; sourceTree = "<group>"; };
+		57D419DB149432A900B28108 /* RemoteSwitch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RemoteSwitch-Prefix.pch"; sourceTree = "<group>"; };
 		57D419DD149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		57D419DF149432A900B28108 /* RSAppDelegate.h */ = {isa = PBXFileReference; path = RSAppDelegate.h; sourceTree = "<group>"; };
+		57D419DF149432A900B28108 /* RSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RSAppDelegate.h; sourceTree = "<group>"; };
 		57D419E0149432A900B28108 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
 		57D419E3149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		57D419EA149432A900B28108 /* RemoteSwitchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteSwitchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D419EB149432A900B28108 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		57D419F2149432A900B28108 /* RemoteSwitchTests-Info.plist */ = {isa = PBXFileReference; path = "RemoteSwitchTests-Info.plist"; sourceTree = "<group>"; };
+		57D419F2149432A900B28108 /* RemoteSwitchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RemoteSwitchTests-Info.plist"; sourceTree = "<group>"; };
 		57D419F4149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		57D419F6149432A900B28108 /* RemoteSwitchTests.h */ = {isa = PBXFileReference; path = RemoteSwitchTests.h; sourceTree = "<group>"; };
+		57D419F6149432A900B28108 /* RemoteSwitchTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteSwitchTests.h; sourceTree = "<group>"; };
 		57D419F7149432A900B28108 /* RemoteSwitchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteSwitchTests.m; sourceTree = "<group>"; };
+		57D41A071494408900B28108 /* HIDRemote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HIDRemote.h; sourceTree = "<group>"; };
+		57D41A081494408900B28108 /* HIDRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDRemote.m; sourceTree = "<group>"; };
+		57D41A0A1494417B00B28108 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		57D41A0C1494418300B28108 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		57D41A0F14945E8000B28108 /* disabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = disabled.png; sourceTree = "<group>"; };
+		57D41A1014945E8000B28108 /* enabled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enabled.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D41A0D1494418300B28108 /* IOKit.framework in Frameworks */,
+				57D41A0B1494417B00B28108 /* Carbon.framework in Frameworks */,
 				57D419CE149432A900B28108 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,10 +88,12 @@
 		57D419BE149432A800B28108 = {
 			isa = PBXGroup;
 			children = (
+				57D41A0E14945E8000B28108 /* Resources */,
 				57D419D3149432A900B28108 /* RemoteSwitch */,
 				57D419F0149432A900B28108 /* RemoteSwitchTests */,
 				57D419CC149432A900B28108 /* Frameworks */,
 				57D419CA149432A900B28108 /* Products */,
+				57D41A051494408900B28108 /* libs */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +109,8 @@
 		57D419CC149432A900B28108 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57D41A0C1494418300B28108 /* IOKit.framework */,
+				57D41A0A1494417B00B28108 /* Carbon.framework */,
 				57D419CD149432A900B28108 /* Cocoa.framework */,
 				57D419EB149432A900B28108 /* SenTestingKit.framework */,
 				57D419CF149432A900B28108 /* Other Frameworks */,
@@ -151,6 +168,33 @@
 				57D419F3149432A900B28108 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57D41A051494408900B28108 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				57D41A061494408900B28108 /* HIDRemote */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		57D41A061494408900B28108 /* HIDRemote */ = {
+			isa = PBXGroup;
+			children = (
+				57D41A071494408900B28108 /* HIDRemote.h */,
+				57D41A081494408900B28108 /* HIDRemote.m */,
+			);
+			path = HIDRemote;
+			sourceTree = "<group>";
+		};
+		57D41A0E14945E8000B28108 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57D41A0F14945E8000B28108 /* disabled.png */,
+				57D41A1014945E8000B28108 /* enabled.png */,
+			);
+			name = Resources;
+			path = RemoteSwitch/Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +270,8 @@
 				57D419D8149432A900B28108 /* InfoPlist.strings in Resources */,
 				57D419DE149432A900B28108 /* Credits.rtf in Resources */,
 				57D419E4149432A900B28108 /* MainMenu.xib in Resources */,
+				57D41A1114945E8000B28108 /* disabled.png in Resources */,
+				57D41A1214945E8000B28108 /* enabled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +308,7 @@
 			files = (
 				57D419DA149432A900B28108 /* main.m in Sources */,
 				57D419E1149432A900B28108 /* RSAppDelegate.m in Sources */,
+				57D41A091494408900B28108 /* HIDRemote.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
