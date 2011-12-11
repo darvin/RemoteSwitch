@@ -1,0 +1,450 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		57D419CE149432A900B28108 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D419CD149432A900B28108 /* Cocoa.framework */; };
+		57D419D8149432A900B28108 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57D419D6149432A900B28108 /* InfoPlist.strings */; };
+		57D419DA149432A900B28108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D419D9149432A900B28108 /* main.m */; };
+		57D419DE149432A900B28108 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 57D419DC149432A900B28108 /* Credits.rtf */; };
+		57D419E1149432A900B28108 /* RSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D419E0149432A900B28108 /* RSAppDelegate.m */; };
+		57D419E4149432A900B28108 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57D419E2149432A900B28108 /* MainMenu.xib */; };
+		57D419EC149432A900B28108 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D419EB149432A900B28108 /* SenTestingKit.framework */; };
+		57D419ED149432A900B28108 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D419CD149432A900B28108 /* Cocoa.framework */; };
+		57D419F5149432A900B28108 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57D419F3149432A900B28108 /* InfoPlist.strings */; };
+		57D419F8149432A900B28108 /* RemoteSwitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D419F7149432A900B28108 /* RemoteSwitchTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57D419EE149432A900B28108 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 57D419C0149432A800B28108 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 57D419C8149432A900B28108;
+			remoteInfo = RemoteSwitch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		57D419C9149432A900B28108 /* RemoteSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D419CD149432A900B28108 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		57D419D0149432A900B28108 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		57D419D1149432A900B28108 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		57D419D2149432A900B28108 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		57D419D5149432A900B28108 /* RemoteSwitch-Info.plist */ = {isa = PBXFileReference; path = "RemoteSwitch-Info.plist"; sourceTree = "<group>"; };
+		57D419D7149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		57D419D9149432A900B28108 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		57D419DB149432A900B28108 /* RemoteSwitch-Prefix.pch */ = {isa = PBXFileReference; path = "RemoteSwitch-Prefix.pch"; sourceTree = "<group>"; };
+		57D419DD149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		57D419DF149432A900B28108 /* RSAppDelegate.h */ = {isa = PBXFileReference; path = RSAppDelegate.h; sourceTree = "<group>"; };
+		57D419E0149432A900B28108 /* RSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSAppDelegate.m; sourceTree = "<group>"; };
+		57D419E3149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		57D419EA149432A900B28108 /* RemoteSwitchTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemoteSwitchTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57D419EB149432A900B28108 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		57D419F2149432A900B28108 /* RemoteSwitchTests-Info.plist */ = {isa = PBXFileReference; path = "RemoteSwitchTests-Info.plist"; sourceTree = "<group>"; };
+		57D419F4149432A900B28108 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		57D419F6149432A900B28108 /* RemoteSwitchTests.h */ = {isa = PBXFileReference; path = RemoteSwitchTests.h; sourceTree = "<group>"; };
+		57D419F7149432A900B28108 /* RemoteSwitchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RemoteSwitchTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		57D419C6149432A900B28108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D419CE149432A900B28108 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57D419E6149432A900B28108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D419EC149432A900B28108 /* SenTestingKit.framework in Frameworks */,
+				57D419ED149432A900B28108 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		57D419BE149432A800B28108 = {
+			isa = PBXGroup;
+			children = (
+				57D419D3149432A900B28108 /* RemoteSwitch */,
+				57D419F0149432A900B28108 /* RemoteSwitchTests */,
+				57D419CC149432A900B28108 /* Frameworks */,
+				57D419CA149432A900B28108 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		57D419CA149432A900B28108 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				57D419C9149432A900B28108 /* RemoteSwitch.app */,
+				57D419EA149432A900B28108 /* RemoteSwitchTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		57D419CC149432A900B28108 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57D419CD149432A900B28108 /* Cocoa.framework */,
+				57D419EB149432A900B28108 /* SenTestingKit.framework */,
+				57D419CF149432A900B28108 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		57D419CF149432A900B28108 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57D419D0149432A900B28108 /* AppKit.framework */,
+				57D419D1149432A900B28108 /* CoreData.framework */,
+				57D419D2149432A900B28108 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		57D419D3149432A900B28108 /* RemoteSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				57D419DF149432A900B28108 /* RSAppDelegate.h */,
+				57D419E0149432A900B28108 /* RSAppDelegate.m */,
+				57D419E2149432A900B28108 /* MainMenu.xib */,
+				57D419D4149432A900B28108 /* Supporting Files */,
+			);
+			path = RemoteSwitch;
+			sourceTree = "<group>";
+		};
+		57D419D4149432A900B28108 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57D419D5149432A900B28108 /* RemoteSwitch-Info.plist */,
+				57D419D6149432A900B28108 /* InfoPlist.strings */,
+				57D419D9149432A900B28108 /* main.m */,
+				57D419DB149432A900B28108 /* RemoteSwitch-Prefix.pch */,
+				57D419DC149432A900B28108 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57D419F0149432A900B28108 /* RemoteSwitchTests */ = {
+			isa = PBXGroup;
+			children = (
+				57D419F6149432A900B28108 /* RemoteSwitchTests.h */,
+				57D419F7149432A900B28108 /* RemoteSwitchTests.m */,
+				57D419F1149432A900B28108 /* Supporting Files */,
+			);
+			path = RemoteSwitchTests;
+			sourceTree = "<group>";
+		};
+		57D419F1149432A900B28108 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				57D419F2149432A900B28108 /* RemoteSwitchTests-Info.plist */,
+				57D419F3149432A900B28108 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		57D419C8149432A900B28108 /* RemoteSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57D419FB149432A900B28108 /* Build configuration list for PBXNativeTarget "RemoteSwitch" */;
+			buildPhases = (
+				57D419C5149432A900B28108 /* Sources */,
+				57D419C6149432A900B28108 /* Frameworks */,
+				57D419C7149432A900B28108 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RemoteSwitch;
+			productName = RemoteSwitch;
+			productReference = 57D419C9149432A900B28108 /* RemoteSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		57D419E9149432A900B28108 /* RemoteSwitchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57D419FE149432A900B28108 /* Build configuration list for PBXNativeTarget "RemoteSwitchTests" */;
+			buildPhases = (
+				57D419E5149432A900B28108 /* Sources */,
+				57D419E6149432A900B28108 /* Frameworks */,
+				57D419E7149432A900B28108 /* Resources */,
+				57D419E8149432A900B28108 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57D419EF149432A900B28108 /* PBXTargetDependency */,
+			);
+			name = RemoteSwitchTests;
+			productName = RemoteSwitchTests;
+			productReference = 57D419EA149432A900B28108 /* RemoteSwitchTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		57D419C0149432A800B28108 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 57D419C3149432A800B28108 /* Build configuration list for PBXProject "RemoteSwitch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 57D419BE149432A800B28108;
+			productRefGroup = 57D419CA149432A900B28108 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				57D419C8149432A900B28108 /* RemoteSwitch */,
+				57D419E9149432A900B28108 /* RemoteSwitchTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		57D419C7149432A900B28108 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D419D8149432A900B28108 /* InfoPlist.strings in Resources */,
+				57D419DE149432A900B28108 /* Credits.rtf in Resources */,
+				57D419E4149432A900B28108 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57D419E7149432A900B28108 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D419F5149432A900B28108 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		57D419E8149432A900B28108 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		57D419C5149432A900B28108 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D419DA149432A900B28108 /* main.m in Sources */,
+				57D419E1149432A900B28108 /* RSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57D419E5149432A900B28108 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57D419F8149432A900B28108 /* RemoteSwitchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57D419EF149432A900B28108 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 57D419C8149432A900B28108 /* RemoteSwitch */;
+			targetProxy = 57D419EE149432A900B28108 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		57D419D6149432A900B28108 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57D419D7149432A900B28108 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		57D419DC149432A900B28108 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57D419DD149432A900B28108 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		57D419E2149432A900B28108 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57D419E3149432A900B28108 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		57D419F3149432A900B28108 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				57D419F4149432A900B28108 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		57D419F9149432A900B28108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		57D419FA149432A900B28108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		57D419FC149432A900B28108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemoteSwitch/RemoteSwitch-Prefix.pch";
+				INFOPLIST_FILE = "RemoteSwitch/RemoteSwitch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		57D419FD149432A900B28108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemoteSwitch/RemoteSwitch-Prefix.pch";
+				INFOPLIST_FILE = "RemoteSwitch/RemoteSwitch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		57D419FF149432A900B28108 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RemoteSwitch.app/Contents/MacOS/RemoteSwitch";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemoteSwitch/RemoteSwitch-Prefix.pch";
+				INFOPLIST_FILE = "RemoteSwitchTests/RemoteSwitchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		57D41A00149432A900B28108 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RemoteSwitch.app/Contents/MacOS/RemoteSwitch";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RemoteSwitch/RemoteSwitch-Prefix.pch";
+				INFOPLIST_FILE = "RemoteSwitchTests/RemoteSwitchTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		57D419C3149432A800B28108 /* Build configuration list for PBXProject "RemoteSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D419F9149432A900B28108 /* Debug */,
+				57D419FA149432A900B28108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		57D419FB149432A900B28108 /* Build configuration list for PBXNativeTarget "RemoteSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D419FC149432A900B28108 /* Debug */,
+				57D419FD149432A900B28108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		57D419FE149432A900B28108 /* Build configuration list for PBXNativeTarget "RemoteSwitchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57D419FF149432A900B28108 /* Debug */,
+				57D41A00149432A900B28108 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 57D419C0149432A800B28108 /* Project object */;
+}
