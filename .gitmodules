@@ -1,0 +1,6 @@
+[submodule "libs/LaunchAtLoginController"]
+	path = libs/LaunchAtLoginController
+	url = git://github.com/Mozketo/LaunchAtLoginController.git
+[submodule "libs/HIDRemoteSDK"]
+	path = libs/HIDRemoteSDK
+	url = git://github.com/uliwitness/HIDRemoteSDK.git
