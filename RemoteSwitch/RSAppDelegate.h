@@ -8,11 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "HIDRemote.h"
+#import "PrefController.h"
 
 #define kMaxButtonSequenceLength 10
 #define kSecondsBetweenButtons 3
 
-@interface RSAppDelegate : NSObject <NSApplicationDelegate, HIDRemoteDelegate>
+@interface RSAppDelegate : NSObject <NSApplicationDelegate, HIDRemoteDelegate, PrefControllerDelegate>
 {
     NSWindow *window;
     IBOutlet NSMenu *statusMenu;
@@ -24,6 +25,9 @@
     
     NSImage *enabledImage;
     NSImage *disabledImage;
+    NSAttributedString *enabledTitle;
+    NSAttributedString *disabledTitle;
+    
     
 }
 

@@ -8,6 +8,7 @@
 
 #import "RSAppDelegate.h"
 #import "HIDRemote.h"
+#import "PrefController.h"
 
 @implementation RSAppDelegate
 
@@ -25,12 +26,15 @@
     if(!enabled) {
         [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeExclusiveAuto];
         [remoteMenuItem setState:NSOffState];
-        [statusItem setImage:disabledImage];
+        [statusItem setAttributedTitle:disabledTitle];
+//        [statusItem setImage:disabledImage];
     }
     else {
         [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeShared];
         [remoteMenuItem setState:NSOnState];
-        [statusItem setImage:enabledImage];
+        [statusItem setAttributedTitle:enabledTitle];
+
+//        [statusItem setImage:enabledImage];
         
     }
     remoteEnabled = enabled;
@@ -58,6 +62,16 @@
     [statusItem setMenu:statusMenu];
     [statusItem setHighlightMode:YES];
     
+    NSDictionary *attributes = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                [NSFont fontWithName:@"Apple Symbols" size:12.0], NSFontAttributeName, nil];
+    enabledTitle = [[NSAttributedString alloc] 
+                                    initWithString:@"\u138a"
+                                    attributes: attributes];
+    disabledTitle = [[NSAttributedString alloc] 
+                    initWithString:@"\u5003"
+                    attributes: attributes];
+    
+    
     if ([HIDRemote isCandelairInstallationRequiredForRemoteMode:kHIDRemoteModeExclusiveAuto])
     {
         // Candelair needs to be installed. Inform the user about it.
@@ -67,7 +81,7 @@
     {
         // Start using HIDRemote ..
         [[HIDRemote sharedHIDRemote] setDelegate:self];
-        self.remoteEnabled = NO;
+        self.remoteEnabled = YES;
 
     }
     
@@ -80,75 +94,27 @@
     self.remoteEnabled = !self.remoteEnabled;
 }
 
+- (IBAction) openPreferences:(id)sender {
+    [[HIDRemote sharedHIDRemote] setDelegate:nil];
+    if ([[HIDRemote sharedHIDRemote] isStarted])
+        [[HIDRemote sharedHIDRemote] stopRemoteControl];
+
+    [PrefController sharedPrefController].delegate = self;
+    [[PrefController sharedPrefController] showWindow:self];
+    [[[PrefController sharedPrefController] window] makeKeyAndOrderFront:self];
+    
+
+}
+
+- (void) prefControllerClosed:(PrefController *)prefController{
+    self.remoteEnabled = self.remoteEnabled;
+}
 
 
 #pragma mark -- Handle remote control events --
 - (void)hidRemote:(HIDRemote *)hidRemote eventWithButton:(HIDRemoteButtonCode)buttonCode isPressed:(BOOL)isPressed fromHardwareWithAttributes:(NSMutableDictionary *)attributes
 {
-    
-//    
-//    
-//	NSString *buttonName = nil;
-//    
-//	switch (buttonCode)
-//	{
-//		case kHIDRemoteButtonCodeUp:
-//			buttonName = @"Up";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeUpHold:
-//			buttonName = @"Up (hold)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeDown:
-//			buttonName = @"Down";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeDownHold:
-//			buttonName = @"Down (hold)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeLeft:
-//			buttonName = @"Left";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeLeftHold:
-//			buttonName = @"Left (hold)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeRight:
-//			buttonName = @"Right";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeRightHold:
-//			buttonName = @"Right (hold)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeCenter:
-//			buttonName = @"Center";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeCenterHold:
-//			buttonName = @"Center (hold)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeMenu:
-//			buttonName = @"Menu";
-//            break;
-//            
-//		case kHIDRemoteButtonCodeMenuHold:
-//			buttonName = @"Menu (hold)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodePlay:
-//			buttonName = @"Play (Alu Remote!)";
-//            break;
-//            
-//		case kHIDRemoteButtonCodePlayHold:
-//			buttonName = @"Play (Alu Remote!) (hold)";
-//            break;
-//	}
-	
+    	
 	if (isPressed)
 	{
 	}
