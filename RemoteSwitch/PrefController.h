@@ -7,7 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+#import "RemoteSequenceTextField.h"
 
 @class PrefController;
 
@@ -22,9 +22,9 @@
 +(PrefController*) sharedPrefController;
 
 @property (weak) id<PrefControllerDelegate> delegate;
-@property (weak) IBOutlet NSTextField *toggleField;
-@property (weak) IBOutlet NSTextField *enableField;
-@property (weak) IBOutlet NSTextField *disableField;
+@property (weak) IBOutlet RemoteSequenceTextField *toggleField;
+@property (weak) IBOutlet RemoteSequenceTextField *enableField;
+@property (weak) IBOutlet RemoteSequenceTextField *disableField;
 
 
 @end

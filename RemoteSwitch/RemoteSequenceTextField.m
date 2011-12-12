@@ -8,13 +8,22 @@
 
 #import "RemoteSequenceTextField.h"
 #import "HIDRemote.h"
-#import "NSMutableArray+RemoteSequence.h"
+#import "RemoteSequence.h"
+
+
+@interface RemoteSequenceTextField()
+-(void) refreshSequence;
+@end
 
 @implementation RemoteSequenceTextField
-@synthesize remoteSequence;
+@synthesize remoteSequence=_remoteSequence;
 -(void)awakeFromNib {
     self.delegate = self;
-    self.remoteSequence = [[NSMutableArray alloc] init];
+}
+
+-(void) setRemoteSequence:(RemoteSequence *)remoteSequence {
+    _remoteSequence = remoteSequence;
+    [self refreshSequence];
 }
 
 
@@ -23,7 +32,10 @@
     [[HIDRemote sharedHIDRemote] setDelegate:previousRemoteDelegate];
 
 }
-
+-(void) controlTextDidChange:(NSNotification *)obj {
+    [self.remoteSequence removeAllObjects];
+    [self refreshSequence];
+}
 -(BOOL) becomeFirstResponder {
     
     previousRemoteDelegate = [[HIDRemote sharedHIDRemote] delegate];
@@ -40,7 +52,7 @@
 
 
 -(void) refreshSequence {
-    [self setStringValue:[self.remoteSequence humanReadable]];
+    [self setStringValue:[self.remoteSequence description]];
 }
 
 - (void)hidRemote:(HIDRemote *)hidRemote				// The instance of HIDRemote sending this

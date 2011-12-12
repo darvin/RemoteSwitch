@@ -8,7 +8,7 @@
 
 #import <AppKit/AppKit.h>
 #import "HIDRemote.h"
-#import "NSMutableArray+RemoteSequence.h"
+#import "RemoteSequence.h"
 
 
 @interface RemoteSequenceTextField : NSTextField <NSTextFieldDelegate, HIDRemoteDelegate>
@@ -16,5 +16,5 @@
     NSObject<HIDRemoteDelegate> * previousRemoteDelegate;
     
 }
-@property (strong) NSMutableArray* remoteSequence;
+@property (weak, nonatomic) RemoteSequence* remoteSequence;
 @end

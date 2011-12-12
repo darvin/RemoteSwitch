@@ -9,6 +9,13 @@
 #import "RSAppDelegate.h"
 #import "HIDRemote.h"
 #import "PrefController.h"
+#import "AppPreferences.h"
+#import "RemoteSequence.h"
+
+@interface RSAppDelegate() 
+-(void) enableRemote;
+-(void) disableRemote;
+@end
 
 @implementation RSAppDelegate
 
@@ -26,29 +33,30 @@
     if(!enabled) {
         [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeExclusiveAuto];
         [remoteMenuItem setState:NSOffState];
-        [statusItem setAttributedTitle:disabledTitle];
-//        [statusItem setImage:disabledImage];
+//        [statusItem setAttributedTitle:disabledTitle];
+        [statusItem setImage:disabledImage];
     }
     else {
         [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeShared];
         [remoteMenuItem setState:NSOnState];
-        [statusItem setAttributedTitle:enabledTitle];
+//        [statusItem setAttributedTitle:enabledTitle];
 
-//        [statusItem setImage:enabledImage];
+        [statusItem setImage:enabledImage];
         
     }
     remoteEnabled = enabled;
 }
+-(void) enableRemote {
+    self.remoteEnabled = YES;
+}
+-(void) disableRemote {
+    self.remoteEnabled = NO;
+}
 
 -(void)awakeFromNib{
 
-    pressedButtons = [NSMutableArray array];
-    buttonSequence = [NSArray arrayWithObjects:
-                      [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-                      [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-                      [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-                      
-                      nil];
+    pressedButtons = [[RemoteSequence alloc] init];
+
     
     disabledImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle]
                                                              pathForResource:@"disabled" ofType:@"png"]];
@@ -107,6 +115,7 @@
 }
 
 - (void) prefControllerClosed:(PrefController *)prefController{
+    [HIDRemote sharedHIDRemote].delegate = self; 
     self.remoteEnabled = self.remoteEnabled;
 }
 
@@ -125,25 +134,27 @@
         }
         
         
-        [pressedButtons addObject: [NSNumber numberWithInt:buttonCode]];
+        [pressedButtons addButtonCode:buttonCode];
         
         
-        if ([pressedButtons count]>=[buttonSequence count]) {
-            NSArray * slice = [pressedButtons subarrayWithRange:
-                           (NSRange){[pressedButtons count]-[buttonSequence count], [buttonSequence count]}];
-            if ([slice isEqualToArray:buttonSequence]) {
+
+        
+        AppPreferences* appPrefs = [AppPreferences sharedAppPreferences];
+        
+        if ([appPrefs.toggleSequence isSequenceOnEndOfSequence:pressedButtons]) {
                 [pressedButtons removeAllObjects];
-                [self performSelector:@selector(toggleRemote:)withObject:self afterDelay:0.01];
-            }
+                [self performSelector:@selector(toggleRemote:)withObject:self afterDelay:kDelayBeforeSwitch];
+        } else if ([appPrefs.enableSequence isSequenceOnEndOfSequence:pressedButtons]) {
+            [pressedButtons removeAllObjects];
+            [self performSelector:@selector(enableRemote)withObject:nil afterDelay:kDelayBeforeSwitch];
+        } else if ([appPrefs.disableSequence isSequenceOnEndOfSequence:pressedButtons]) {
+            [pressedButtons removeAllObjects];
+            [self performSelector:@selector(disableRemote)withObject:nil afterDelay:kDelayBeforeSwitch];
         }
         
         lastTimeButtonPressed =CFAbsoluteTimeGetCurrent();
 
 	}
-    if ([pressedButtons count]>kMaxButtonSequenceLength) {
-        [ pressedButtons removeObjectAtIndex:0 ];
-
-    }
     
 }
 

@@ -9,17 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import "HIDRemote.h"
 #import "PrefController.h"
+#import "RemoteSequence.h"
 
-#define kMaxButtonSequenceLength 10
 #define kSecondsBetweenButtons 3
+#define kDelayBeforeSwitch 0.001
 
 @interface RSAppDelegate : NSObject <NSApplicationDelegate, HIDRemoteDelegate, PrefControllerDelegate>
 {
     NSWindow *window;
     IBOutlet NSMenu *statusMenu;
     NSStatusItem * statusItem;
-    NSMutableArray * pressedButtons;
-    NSArray *buttonSequence;
+    RemoteSequence * pressedButtons;
     IBOutlet NSMenuItem *remoteMenuItem;
     CFAbsoluteTime lastTimeButtonPressed;
     

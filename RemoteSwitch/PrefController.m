@@ -7,7 +7,7 @@
 //
 
 #import "PrefController.h"
-
+#import "AppPreferences.h"
 @implementation PrefController
 @synthesize delegate, toggleField, enableField, disableField;
 
@@ -21,13 +21,9 @@
 //    toggleField.font = [NSFont fontWithName:@"Apple Symbols" size:12.0];
 //    [toggleField setStringValue:@"\udd12 \udd13 \u sdfasdf sdf"];
     self.window.delegate = self;
-//    NSUserDefaults *standardUserDefaults = [NSUserDefaults standardUserDefaults];
-//	NSArray *val = nil;
-//	
-//	if (standardUserDefaults) 
-//		val = [standardUserDefaults objectForKey:@"Prefs"];
-//	
-//	return val;
+    self.toggleField.remoteSequence = [AppPreferences sharedAppPreferences].toggleSequence;
+    self.enableField.remoteSequence = [AppPreferences sharedAppPreferences].enableSequence;
+    self.disableField.remoteSequence = [AppPreferences sharedAppPreferences].disableSequence;
 }
 
 
@@ -45,6 +41,7 @@
 
 
 -(void)windowWillClose:(NSNotification *)notification {
+    [[AppPreferences sharedAppPreferences] save];
     [self.delegate prefControllerClosed:self];
 }
 
