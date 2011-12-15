@@ -11,7 +11,7 @@
 #import "PrefController.h"
 #import "AppPreferences.h"
 #import "RemoteSequence.h"
-
+#import "NSImage+FromGlyph.h"
 @interface RSAppDelegate() 
 -(void) enableRemote;
 -(void) disableRemote;
@@ -33,13 +33,11 @@
     if(!enabled) {
         [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeExclusiveAuto];
         [remoteMenuItem setState:NSOffState];
-//        [statusItem setAttributedTitle:disabledTitle];
         [statusItem setImage:disabledImage];
     }
     else {
         [[HIDRemote sharedHIDRemote] startRemoteControl:kHIDRemoteModeShared];
         [remoteMenuItem setState:NSOnState];
-//        [statusItem setAttributedTitle:enabledTitle];
 
         [statusItem setImage:enabledImage];
         
@@ -58,27 +56,14 @@
     pressedButtons = [[RemoteSequence alloc] init];
 
     
-    disabledImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle]
-                                                             pathForResource:@"disabled" ofType:@"png"]];
-    enabledImage = [[NSImage alloc] initWithContentsOfFile:[[NSBundle mainBundle]
-                                                            pathForResource:@"enabled" ofType:@"png"]];
-    
+    disabledImage = [NSImage imageFromSymbolFontGID:SymbolLock];
+    enabledImage = [NSImage imageFromSymbolFontGID:SymbolUnlock];
     
     
     
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setMenu:statusMenu];
-    [statusItem setHighlightMode:YES];
-    
-    NSDictionary *attributes = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                [NSFont fontWithName:@"Apple Symbols" size:12.0], NSFontAttributeName, nil];
-    enabledTitle = [[NSAttributedString alloc] 
-                                    initWithString:@"\u138a"
-                                    attributes: attributes];
-    disabledTitle = [[NSAttributedString alloc] 
-                    initWithString:@"\u5003"
-                    attributes: attributes];
-    
+    [statusItem setHighlightMode:YES];    
     
     if ([HIDRemote isCandelairInstallationRequiredForRemoteMode:kHIDRemoteModeExclusiveAuto])
     {
@@ -109,7 +94,7 @@
 
     [PrefController sharedPrefController].delegate = self;
     [[PrefController sharedPrefController] showWindow:self];
-    [[[PrefController sharedPrefController] window] makeKeyAndOrderFront:self];
+    [[[PrefController sharedPrefController] window] orderFrontRegardless];
     
 
 }

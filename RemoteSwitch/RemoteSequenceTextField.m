@@ -9,6 +9,7 @@
 #import "RemoteSequenceTextField.h"
 #import "HIDRemote.h"
 #import "RemoteSequence.h"
+#import "NSImage+FromGlyph.h"
 
 
 @interface RemoteSequenceTextField()
@@ -52,7 +53,9 @@
 
 
 -(void) refreshSequence {
-    [self setStringValue:[self.remoteSequence description]];
+    NSAttributedString* st = [self.remoteSequence attributedString];
+    NSLog(@"%@", st);
+    [self setAttributedStringValue:[self.remoteSequence attributedString]];
 }
 
 - (void)hidRemote:(HIDRemote *)hidRemote				// The instance of HIDRemote sending this

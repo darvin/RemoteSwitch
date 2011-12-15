@@ -15,6 +15,7 @@
 		578C9B691495E1B9004A8242 /* AppPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C9B681495E1B9004A8242 /* AppPreferences.m */; };
 		578C9B9E1495F620004A8242 /* HIDRemote.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C9B851495F620004A8242 /* HIDRemote.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		578C9BA11495F620004A8242 /* LaunchAtLoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C9B8A1495F620004A8242 /* LaunchAtLoginController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		578C9BA8149608D9004A8242 /* NSImage+FromGlyph.m in Sources */ = {isa = PBXBuildFile; fileRef = 578C9BA7149608D9004A8242 /* NSImage+FromGlyph.m */; };
 		57D419CE149432A900B28108 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57D419CD149432A900B28108 /* Cocoa.framework */; };
 		57D419D8149432A900B28108 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57D419D6149432A900B28108 /* InfoPlist.strings */; };
 		57D419DA149432A900B28108 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D419D9149432A900B28108 /* main.m */; };
@@ -56,6 +57,8 @@
 		578C9B851495F620004A8242 /* HIDRemote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HIDRemote.m; sourceTree = "<group>"; };
 		578C9B891495F620004A8242 /* LaunchAtLoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchAtLoginController.h; sourceTree = "<group>"; };
 		578C9B8A1495F620004A8242 /* LaunchAtLoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchAtLoginController.m; sourceTree = "<group>"; };
+		578C9BA6149608D9004A8242 /* NSImage+FromGlyph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+FromGlyph.h"; sourceTree = "<group>"; };
+		578C9BA7149608D9004A8242 /* NSImage+FromGlyph.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+FromGlyph.m"; sourceTree = "<group>"; };
 		57D419C9149432A900B28108 /* RemoteSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemoteSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D419CD149432A900B28108 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		57D419D0149432A900B28108 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -199,6 +202,8 @@
 				578C9B651495CEF2004A8242 /* RemoteSequence.m */,
 				578C9B671495E1B9004A8242 /* AppPreferences.h */,
 				578C9B681495E1B9004A8242 /* AppPreferences.m */,
+				578C9BA6149608D9004A8242 /* NSImage+FromGlyph.h */,
+				578C9BA7149608D9004A8242 /* NSImage+FromGlyph.m */,
 			);
 			path = RemoteSwitch;
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				578C9B691495E1B9004A8242 /* AppPreferences.m in Sources */,
 				578C9B9E1495F620004A8242 /* HIDRemote.m in Sources */,
 				578C9BA11495F620004A8242 /* LaunchAtLoginController.m in Sources */,
+				578C9BA8149608D9004A8242 /* NSImage+FromGlyph.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

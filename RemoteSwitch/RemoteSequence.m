@@ -8,6 +8,7 @@
 
 #import "RemoteSequence.h"
 #import "HIDRemote.h"
+#import "NSImage+FromGlyph.h"
 
 @implementation RemoteSequence
 @synthesize sequence = _sequence;
@@ -137,6 +138,115 @@
     }
     
     return result;
+}
+
+-(NSAttributedString*) attributedString {
+    NSMutableArray* symbols = [[NSMutableArray alloc] init];
+
+    for (NSNumber * item in _sequence) {
+        switch ([item intValue])
+        {
+            case kHIDRemoteButtonCodeUp:
+                [symbols addObject:[NSNumber numberWithInt:SymbolUp]];
+                break;
+                
+            case kHIDRemoteButtonCodeUpHold:
+                [symbols addObject:[NSNumber numberWithInt:SymbolUp]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+                break;
+                
+            case kHIDRemoteButtonCodeDown:
+                [symbols addObject:[NSNumber numberWithInt:SymbolDown]];
+                break;
+                
+            case kHIDRemoteButtonCodeDownHold:
+                [symbols addObject:[NSNumber numberWithInt:SymbolDown]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+                break;
+                
+            case kHIDRemoteButtonCodeLeft:
+                [symbols addObject:[NSNumber numberWithInt:SymbolLeft]];
+                break;
+                
+            case kHIDRemoteButtonCodeLeftHold:
+                [symbols addObject:[NSNumber numberWithInt:SymbolLeft]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+
+                break;
+                
+            case kHIDRemoteButtonCodeRight:
+                [symbols addObject:[NSNumber numberWithInt:SymbolRight]];
+                break;
+                
+            case kHIDRemoteButtonCodeRightHold:
+                [symbols addObject:[NSNumber numberWithInt:SymbolRight]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+                break;
+                
+            case kHIDRemoteButtonCodeCenter:
+                [symbols addObject:[NSNumber numberWithInt:SymbolCenter]];
+                break;
+                
+            case kHIDRemoteButtonCodeCenterHold:                
+                [symbols addObject:[NSNumber numberWithInt:SymbolCenter]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+                break;
+                
+            case kHIDRemoteButtonCodeMenu:
+                [symbols addObject:[NSNumber numberWithInt:SymbolMenu]];
+                break;
+                
+            case kHIDRemoteButtonCodeMenuHold:
+                [symbols addObject:[NSNumber numberWithInt:SymbolMenu]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+                break;
+                
+            case kHIDRemoteButtonCodePlay:
+                [symbols addObject:[NSNumber numberWithInt:SymbolPlayPause]];
+                break;
+                
+            case kHIDRemoteButtonCodePlayHold:
+                [symbols addObject:[NSNumber numberWithInt:SymbolPlayPause]];
+                [symbols addObject:[NSNumber numberWithInt:SymbolHold]];
+                break;
+        }
+        [symbols addObject:[NSNumber numberWithInt:SymbolFontGID_MAX]];
+    }
+    
+//    NSTextAttachment* attachment = nil;
+//    NSImage * symbolImage = nil;
+//    NSTextAttachmentCell *anAttachmentCell =nil;
+//    SymbolFontGID symbol;
+//    
+    NSMutableAttributedString* result =   [[NSMutableAttributedString alloc] init];
+    NSAttributedString* currentSymbolString = nil;
+    NSLog(@"%@", symbols);
+    for (NSNumber* symbolNumber in symbols) {
+        SymbolFontGID symbol = [symbolNumber intValue];
+        if (symbol==SymbolFontGID_MAX) {
+            currentSymbolString = [[NSMutableAttributedString alloc] initWithString:@" "];
+        } else {
+            NSTextAttachment* attachment = [[NSTextAttachment alloc] init];
+            NSImage *symbolImage = [NSImage imageFromSymbolFontGID:symbol size:12];
+            NSLog(@"%@", symbolImage);
+            NSTextAttachmentCell *anAttachmentCell = [[NSTextAttachmentCell
+                                 alloc] initImageCell:symbolImage];
+            [attachment setAttachmentCell:anAttachmentCell];
+            currentSymbolString = [NSAttributedString attributedStringWithAttachment:attachment];
+//            currentSymbolString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%d", symbol]];
+            
+        }
+        [result appendAttributedString:currentSymbolString];
+    }
+    
+//    return [[NSAttributedString alloc] initWithAttributedString:result];
+    NSTextAttachment* attachment = [[NSTextAttachment alloc] init];
+    NSImage *symbolImage = [NSImage imageNamed:@"enabled.png"];
+    NSLog(@"%@", symbolImage);
+    NSTextAttachmentCell *anAttachmentCell = [[NSTextAttachmentCell
+                                               alloc] initImageCell:symbolImage];
+    [attachment setAttachmentCell:anAttachmentCell];
+    return [NSAttributedString attributedStringWithAttachment:attachment];
 }
 
 @end

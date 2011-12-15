@@ -24,5 +24,6 @@
 -(void) removeAllObjects;
 -(BOOL) isSequenceOnEndOfSequence:(RemoteSequence*) sequence;
 -(NSUInteger) count;
+-(NSAttributedString*) attributedString;
 @property (readonly) NSMutableArray* sequence;
 @end

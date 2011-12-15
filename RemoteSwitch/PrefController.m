@@ -21,9 +21,10 @@
 //    toggleField.font = [NSFont fontWithName:@"Apple Symbols" size:12.0];
 //    [toggleField setStringValue:@"\udd12 \udd13 \u sdfasdf sdf"];
     self.window.delegate = self;
-    self.toggleField.remoteSequence = [AppPreferences sharedAppPreferences].toggleSequence;
+    
     self.enableField.remoteSequence = [AppPreferences sharedAppPreferences].enableSequence;
     self.disableField.remoteSequence = [AppPreferences sharedAppPreferences].disableSequence;
+    self.toggleField.remoteSequence = [AppPreferences sharedAppPreferences].toggleSequence;
 }
 
 
