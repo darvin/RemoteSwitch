@@ -55,59 +55,59 @@
         switch ([item intValue])
         {
             case kHIDRemoteButtonCodeUp:
-                buttonName = @"^";
+                buttonName = @"(▲)";
                 break;
                 
             case kHIDRemoteButtonCodeUpHold:
-                buttonName = @"^h";
+                buttonName = @"(▲h)";
                 break;
                 
             case kHIDRemoteButtonCodeDown:
-                buttonName = @"/";
+                buttonName = @"(▼)";
                 break;
                 
             case kHIDRemoteButtonCodeDownHold:
-                buttonName = @"/h";
+                buttonName = @"(▼h)";
                 break;
                 
             case kHIDRemoteButtonCodeLeft:
-                buttonName = @"<";
+                buttonName = @"(◀)";
                 break;
                 
             case kHIDRemoteButtonCodeLeftHold:
-                buttonName = @"<h";
+                buttonName = @"(◀h)";
                 break;
                 
             case kHIDRemoteButtonCodeRight:
-                buttonName = @">";
+                buttonName = @"(►)";
                 break;
                 
             case kHIDRemoteButtonCodeRightHold:
-                buttonName = @">h";
+                buttonName = @"(►h)";
                 break;
                 
             case kHIDRemoteButtonCodeCenter:
-                buttonName = @".";
+                buttonName = @"(●)";
                 break;
                 
             case kHIDRemoteButtonCodeCenterHold:
-                buttonName = @".h";
+                buttonName = @"(●h)";
                 break;
                 
             case kHIDRemoteButtonCodeMenu:
-                buttonName = @"M";
+                buttonName = @"(M)";
                 break;
                 
             case kHIDRemoteButtonCodeMenuHold:
-                buttonName = @"Mh";
+                buttonName = @"(Mh)";
                 break;
                 
             case kHIDRemoteButtonCodePlay:
-                buttonName = @"P";
+                buttonName = @"(►|)";
                 break;
                 
             case kHIDRemoteButtonCodePlayHold:
-                buttonName = @"Ph";
+                buttonName = @"(►|h)";
                 break;
         }
         [result appendString:buttonName];

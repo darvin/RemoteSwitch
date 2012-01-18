@@ -27,21 +27,21 @@
             
             
             val = [standardUserDefaults objectForKey:@"EnableSequence"];
-//            if (!val)
-//                val = [NSArray arrayWithObjects:
-//                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-//                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-//                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-//                       nil];
+            if (!val)
+                val = [NSArray arrayWithObjects:
+                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
+                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
+                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
+                       nil];
             self.enableSequence = [RemoteSequence sequenceFromUserDefaultsArray: val];
             
             val = [standardUserDefaults objectForKey:@"DisableSequence"];
-//            if (!val)
-//                val = [NSArray arrayWithObjects:
-//                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-//                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-//                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
-//                       nil];
+            if (!val)
+                val = [NSArray arrayWithObjects:
+                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
+                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
+                       [NSNumber numberWithInt:kHIDRemoteButtonCodeMenu], 
+                       nil];
             self.disableSequence = [RemoteSequence sequenceFromUserDefaultsArray: val];
 
         }

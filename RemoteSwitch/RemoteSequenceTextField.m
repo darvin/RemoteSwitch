@@ -53,9 +53,7 @@
 
 
 -(void) refreshSequence {
-    NSAttributedString* st = [self.remoteSequence attributedString];
-    NSLog(@"%@", st);
-    [self setAttributedStringValue:[self.remoteSequence attributedString]];
+    [self setStringValue:[self.remoteSequence description]];
 }
 
 - (void)hidRemote:(HIDRemote *)hidRemote				// The instance of HIDRemote sending this
