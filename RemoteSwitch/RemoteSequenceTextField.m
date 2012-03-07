@@ -37,6 +37,11 @@
     [self.remoteSequence removeAllObjects];
     [self refreshSequence];
 }
+
+-(void)mouseDown:(NSEvent*) theEvent {
+    [self.remoteSequence removeAllObjects];
+    [self refreshSequence];
+}
 -(BOOL) becomeFirstResponder {
     
     previousRemoteDelegate = [[HIDRemote sharedHIDRemote] delegate];

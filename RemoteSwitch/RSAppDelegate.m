@@ -56,8 +56,8 @@
     pressedButtons = [[RemoteSequence alloc] init];
 
     
-    disabledImage = [NSImage imageFromSymbolFontGID:SymbolLock];
-    enabledImage = [NSImage imageFromSymbolFontGID:SymbolUnlock];
+    disabledImage = [NSImage imageNamed:@"disabled"];
+    enabledImage = [NSImage imageNamed:@"enabled"];
     
     
     
